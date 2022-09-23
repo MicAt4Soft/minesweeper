@@ -3,6 +3,9 @@ from functools import reduce
 from math import ceil
 from random import randint
 
+from tkinter import *
+from tkinter import ttk
+
 MINE_SIGN = '*'
 EXPLODED_MINE = "X"
 COVERED_SIGN = "?"
@@ -156,11 +159,22 @@ def are_all_fields_except_mines_uncovered(covered_field, number_of_mines):
 
 
 height = 5
-width = 5
+width = 3
 difficulty = Difficulty.EASY
 running = True
 
 field, covered_field, number_of_mines = generate_field(height, width, difficulty)
+
+
+root = Tk()
+frm = ttk.Frame(root, padding=10)
+frm.grid()
+
+for i in range(width):
+    for j in range(height):
+        ttk.Label(frm, text=str(i) + str(j)).grid(column=i, row=j)
+
+root.mainloop()
 
 while running:
     print("Please select x,y values")
