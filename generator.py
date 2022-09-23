@@ -172,7 +172,7 @@ frm.grid()
 
 for i in range(width):
     for j in range(height):
-        ttk.Label(frm, text=str(i) + str(j)).grid(column=i, row=j)
+        ttk.Button(frm, "?").grid(column=i, row=j)
 
 root.mainloop()
 
