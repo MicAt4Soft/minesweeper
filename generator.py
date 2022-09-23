@@ -173,6 +173,7 @@ frm.grid()
 for i in range(width):
     for j in range(height):
         ttk.Button(frm, "?").grid(column=i, row=j)
+#         ttk.Button(frm, "?", uncover_field(field, covered_field, i, j)).grid(column=i, row=j)
 
 root.mainloop()
 
